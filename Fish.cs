@@ -41,6 +41,6 @@ namespace fish_project {
         public string GetColor  => _color;
         public int    GetSpeed  => _speed;
         public char   GetStyle  => _style;
-        public string GetSwim   => new string(this.GetStyle, 1 + (10*this.GetSpeed/(int)Math.Floor((GetWeight+2)/2)));
+        public virtual string GetSwim   => new string(this.GetStyle, 1 + (10*this.GetSpeed/(int)Math.Floor((GetWeight+2)/2)));
     }
 }
