@@ -1,3 +1,8 @@
+
+
+using System;
+using System.Text.RegularExpressions;
+
 namespace fish_project {
     public class Fish {
         private string _name;    //GetName
@@ -5,7 +10,7 @@ namespace fish_project {
         private string _color;   //GetColor
         private int    _speed;   //GetSpeed
         private bool   _habitat; //true se è di mare, false se è di fiume o lago      //isSea - isSoft
-        private char   _style;   //GetStyle
+        protected char   _style;   //GetStyle
 
         public Fish(string name, double weight, string color, int speed, bool habitat) {
             _style   = '.';
@@ -28,14 +33,14 @@ namespace fish_project {
                    "Stile"       + this._style                               + "\n";
         }
 
-        public bool isSea  => _habitat ? true : false;
-        public bool isSoft => _habitat ? false : true;
+        public bool IsSea  => _habitat;
+        public bool IsSoft => !_habitat;
 
         public string GetName   => _name;
         public double GetWeight => _weight;
         public string GetColor  => _color;
         public int    GetSpeed  => _speed;
         public char   GetStyle  => _style;
-        public string GetSwim   => "";
+        public string GetSwim   => new string(this.GetStyle, 1 + (10*this.GetSpeed/(int)Math.Floor((GetWeight+2)/2)));
     }
 }
