@@ -1,14 +1,12 @@
 namespace fish_project {
     public class Salmon : Fish {
-        private string _river;
+        public string GetRiver { get; }
 
         public Salmon(double weight, string color, int speed, string river)
             : base("salmone", weight, color, speed, false) {
-            this._river = river;
-            base._style = '/';
+            this.GetRiver = river;
+            base._style   = '/';
         }
-
-        public string GetRiver => _river;
 
         public override string ToString() {
             return "Nome : "            + base.GetName                    + "\n" +
@@ -18,7 +16,7 @@ namespace fish_project {
                    "Habitat : "         + (base.IsSea ? "Mare" : "Fiume") + "\n" +
                    "Stile : "           + base.GetStyle                   + "\n" +
                    "Nuotata : "         + base.GetSwim                    + "\n" +
-                   "Fiume d'origine : " + this._river                     + "\n";
+                   "Fiume d'origine : " + this.GetRiver                   + "\n";
         }
     }
 }
