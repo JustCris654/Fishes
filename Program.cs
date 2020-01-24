@@ -23,7 +23,7 @@ namespace fish_project {
             Salmon salmon = new Salmon(SalmonWeight,SalmonColor,SalmonSpeed,SalmonRiver);
             PufferFish pufferFish = new PufferFish(PufferFishWeight,PufferFishColor,PufferFishSpeed);
             CatFish catFish = new CatFish(CatFishWeight, CatFishColor, CatFishSpeed);
-            
+            Console.WriteLine();
 
             Console.WriteLine("");
         }
