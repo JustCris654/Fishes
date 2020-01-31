@@ -1,3 +1,5 @@
+using System.Buffers.Text;
+
 namespace fish_project {
     public class Salmon : Fish {
         public string GetRiver { get; }
@@ -5,7 +7,8 @@ namespace fish_project {
         public Salmon(double weight, string color, int speed, string river)
             : base("salmone", weight, color, speed, false) {
             this.GetRiver = river;
-            base._style   = '/';
+            base.Style   = '/';
+            base.Habitat = false;
         }
 
         public override string ToString() {

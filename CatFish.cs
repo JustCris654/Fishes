@@ -5,7 +5,8 @@ namespace fish_project {
     public class CatFish : Fish {
         public CatFish(double weight, string color, int speed)
             : base("pesce gatto", weight, color, speed, false) {
-            base._style = '>';
+            base.Style = '>';
+            base.Habitat = false;
         }
 
         public override string GetSwim => new string(this.GetStyle,

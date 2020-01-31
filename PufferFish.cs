@@ -1,20 +1,26 @@
+using System;
+
 namespace fish_project {
     public class PufferFish : Fish {
         public PufferFish(double weight, string color, int speed)
             : base("pesce palla", weight, color, speed, false) {
             IsScared    = false;
-            base._style = ')';
+            base.Style = ')';
+            base.Habitat = true;
         }
 
         public bool IsScared { get; private set; }
 
-        public void Scare() {
-            IsScared = true;
+        public override void Scare() {
+            this.IsScared = true;
+        }
+        
+
+        public override void Calm() {
+            this.IsScared = false;
         }
 
-        public void Calm() {
-            IsScared = false;
-        }
+      
 
         public override string ToString() {
             return "Nome : "     + base.GetName                                  + "\n" +
